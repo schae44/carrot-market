@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .profile {
+    @apply size-10 bg-blue-400 rounded-full;
+  }
+}
