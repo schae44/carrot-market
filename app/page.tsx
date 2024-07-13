@@ -1,18 +1,24 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="bg-gray-300 h-screen flex items-center justify-center text-black p-5">
-      <div className="bg-white w-full p-5 shadow-lg rounded-2xl max-w-screen-sm flex flex-col gap-4">
-        {["Nico", "Me", "You", "Sarah"].map((person, index) => (
-          <div key={index} className="group flex items-center gap-3">
-            <div className="profile" />
-            <span className="text-lg font-medium">{person}</span>
-            <div className="size-6 bg-red-500 text-white flex items-center justify-center rounded-full">
-              <span className="z-10">{index}</span>
-              <div className="size-6 bg-red-500 rounded-full absolute animate-ping" />
-            </div>
-          </div>
-        ))}
+    <div className="flex flex-col items-center justify-between min-h-screen p-6">
+      <div className="my-auto flex flex-col items-center gap-2 *:font-medium">
+        <span className="text-9xl">🥕</span>
+        <h1 className="text-4xl ">Carrot</h1>
+        <h2 className="text-2xl">Welcome to Carrot Market!</h2>
       </div>
-    </main>
+      <div className="flex flex-col items-center gap-3 w-full">
+        <Link href="/create-account" className="primary-btn py-2.5 text-lg">
+          Start
+        </Link>
+        <div className="flex gap-2">
+          <span>Already have an account?</span>
+          <Link href="/login" className="hover:underline">
+            Log in
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
